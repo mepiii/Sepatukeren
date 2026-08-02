@@ -1,0 +1,167 @@
+:root {
+  --merek-biru: #2563eb;
+  --merek-biru-dark: #1d4ed8;
+  --merek-dark: #111827;
+  --merek-accent: #06b6d4;
+  --merek: oklch(55% .22 264);
+  --merek-hover: oklch(48% .22 264);
+  --merek-light: oklch(94% .04 264);
+  --accent: oklch(72% .15 200);
+  --ink: oklch(18% .02 264);
+  --ink-secondary: oklch(45% .015 264);
+  --ink-tertiary: oklch(58% .01 264);
+  --surface: oklch(98.5% .005 264);
+  --surface-raised: oklch(99.5% .003 264);
+  --surface-sunken: oklch(96% .008 264);
+  --border: oklch(90% .01 264);
+  --border-strong: oklch(82% .015 264);
+  --sukses: oklch(62% .17 145);
+  --sukses-surface: oklch(95% .04 145);
+  --danger: oklch(55% .22 25);
+  --danger-surface: oklch(95% .03 25);
+  --warning: oklch(72% .16 80);
+  --star: oklch(82% .18 95);
+  --teks: var(--ink);
+  --muted: var(--ink-secondary);
+  --line: var(--border);
+  --page: var(--surface);
+  --white: var(--surface-raised);
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-24: 96px;
+  --teks-xs: .6875rem;
+  --teks-sm: .8125rem;
+  --teks-base: .9375rem;
+  --teks-lg: 1.125rem;
+  --teks-xl: clamp(1.25rem, 1rem + 1vw, 1.5rem);
+  --teks-2xl: clamp(1.75rem, 1rem + 2.5vw, 2.625rem);
+  --teks-hero: clamp(2.25rem, 1rem + 5vw, 4.75rem);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --shadow-sm: 0 8px 24px oklch(18% .02 264 / .06);
+  --shadow-md: 0 16px 40px oklch(18% .02 264 / .1);
+  --shadow-lg: 0 28px 72px oklch(18% .02 264 / .16);
+  --shadow-biru: 0 20px 48px oklch(55% .22 264 / .22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--teks);
+  background: radial-gradient(circle at top left, oklch(94% .04 264), transparent 34rem), var(--page);
+  overflow-x: sembunyi;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+tombol,
+input,
+teksarea,
+select {
+  font: inherit;
+}
+
+tombol {
+  border: 0;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wadah {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.sembunyi {
+  display: none !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+:focus-visible {
+  outline: 2px solid var(--merek);
+  outline-offset: 3px;
+}
+
+.scroll-halus::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scroll-halus::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-halus::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+}
+
+.kosong {
+  text-align: center;
+  color: var(--ink-tertiary);
+  padding: var(--sp-8);
+}
+
+.kosong i {
+  font-size: 34px;
+  margin-bottom: var(--sp-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body * {
+    visibility: sembunyi;
+  }
+  #print-area,
+  #print-area * {
+    visibility: visible;
+  }
+  #print-area {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+  }
+  .jangan-cetak {
+    display: none !important;
+  }
+}
